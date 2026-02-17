@@ -1,0 +1,9 @@
+# Public Directory
+
+This directory will contain the built frontend assets after running:
+
+```bash
+npm run build:frontend
+```
+
+The contents of `frontend/dist` will be copied here and served by the Cloudflare Worker.

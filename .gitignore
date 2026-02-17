@@ -1,0 +1,28 @@
+# Node modules and build output
+node_modules/
+dist/
+frontend/node_modules/
+frontend/dist/
+
+# Cloudflare Wrangler state and temp
+.wrangler/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Env files
+.env
+.env.*
+
+# Vite/React cache
+.vite/
+
+# Misc
+*.local
+*.log

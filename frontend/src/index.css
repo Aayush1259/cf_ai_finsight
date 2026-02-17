@@ -1,0 +1,185 @@
+/* Modern Chat Background */
+.chat-bg-modern {
+  background: radial-gradient(ellipse at 60% 0%, #f8fafc 70%, #e0e7ef 100%);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.12);
+}
+
+/* Chat Textarea Sizing */
+.chat-textarea {
+  min-height: 48px;
+  max-height: 200px;
+}
+
+/* Chat Bubble Styles */
+.chat-bubble-user {
+  /* User bubble already styled by Tailwind, but can add more if needed */
+}
+.chat-bubble-assistant {
+  background: linear-gradient(90deg, #f8fafc 0%, #f3f4f6 100%);
+  border: 1.5px solid #e0e7ef;
+}
+.chat-bubble-briefing {
+  background: linear-gradient(90deg, #e0e7ff 0%, #f0f7ff 100%);
+  border: 1.5px solid #b6d0ff;
+}
+
+/* Message Content Formatting */
+.chat-message-content {
+  word-break: break-word;
+  white-space: pre-line;
+}
+.chat-message-timestamp {
+  /* Text alignment handled by Tailwind, but can add more if needed */
+}
+/* Chat Bubble Animations */
+.chat-bubble-enter {
+  opacity: 0;
+  transform: translateY(24px) scale(0.98);
+}
+.chat-bubble-enter-active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: opacity 350ms cubic-bezier(0.23, 1, 0.32, 1), transform 350ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.chat-bubble-exit {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.chat-bubble-exit-active {
+  opacity: 0;
+  transform: translateY(-12px) scale(0.96);
+  transition: opacity 250ms cubic-bezier(0.23, 1, 0.32, 1), transform 250ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(32px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+/* Watermark utility for Aayush Modi */
+.watermark-aayush {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 0;
+  font-size: 7vw;
+  opacity: 0.06;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  user-select: none;
+  color: #f6821f;
+  text-shadow: 0 2px 16px #fff;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Message markdown styling */
+.message-content h1,
+.message-content h2,
+.message-content h3 {
+  @apply font-bold mt-3 mb-2;
+}
+
+.message-content h1 {
+  @apply text-xl;
+}
+
+.message-content h2 {
+  @apply text-lg;
+}
+
+.message-content h3 {
+  @apply text-base;
+}
+
+.message-content ul,
+.message-content ol {
+  @apply ml-4 my-2;
+}
+
+.message-content ul {
+  @apply list-disc;
+}
+
+.message-content ol {
+  @apply list-decimal;
+}
+
+.message-content li {
+  @apply my-1;
+}
+
+.message-content p {
+  @apply my-2;
+}
+
+.message-content strong {
+  @apply font-semibold;
+}
+
+.message-content code {
+  @apply bg-gray-200 px-1.5 py-0.5 rounded text-sm font-mono;
+}
+
+.message-content pre {
+  @apply bg-gray-800 text-gray-100 p-3 rounded-lg my-2 overflow-x-auto;
+}
+
+.message-content pre code {
+  @apply bg-transparent p-0;
+}
+
+/* Typing indicator animation */
+.typing-dot {
+  animation: typingAnimation 1.4s infinite ease-in-out both;
+}
+
+.typing-dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes typingAnimation {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+/* Smooth transitions */
+.transition-message {
+  transition: all 0.3s ease-in-out;
+}

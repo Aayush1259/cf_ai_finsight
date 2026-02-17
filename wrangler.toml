@@ -1,0 +1,59 @@
+# ============================================================================
+# cf_ai_finsight - Cloudflare Workers Configuration
+# A Context-Aware Financial Literacy Coach
+# ============================================================================
+
+name = "cf_ai_finsight"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+# ============================================================================
+# Workers AI Binding
+# Provides access to Cloudflare's AI models including Llama 3.3
+# ============================================================================
+[ai]
+binding = "AI"
+
+# ============================================================================
+# Durable Objects Configuration
+# UserSession: Stores user chat history and financial profile state
+# ============================================================================
+[[durable_objects.bindings]]
+name = "USER_SESSION"
+class_name = "UserSession"
+
+# Durable Object migrations - required for first deployment
+[[migrations]]
+tag = "v1"
+new_classes = ["UserSession"]
+
+# ============================================================================
+# Workflows Configuration
+# BriefingWorkflow: Triggers daily morning briefing generation
+# ============================================================================
+[[workflows]]
+name = "briefing-workflow"
+binding = "BRIEFING_WORKFLOW"
+class_name = "BriefingWorkflow"
+
+# ============================================================================
+# Static Assets Configuration
+# Serves the React frontend from the public directory
+# ============================================================================
+[site]
+bucket = "./public"
+
+# ============================================================================
+# Development Settings
+# ============================================================================
+[vars]
+ENVIRONMENT = "development"
+
+# ============================================================================
+# Production Environment Overrides
+# ============================================================================
+[env.production]
+name = "cf_ai_finsight-production"
+
+[env.production.vars]
+ENVIRONMENT = "production"

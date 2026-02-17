@@ -1,0 +1,36 @@
+{
+  "name": "cf_ai_finsight",
+  "version": "1.0.0",
+  "description": "Context-Aware Financial Literacy Coach - Cloudflare Workers AI Application",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "deploy:production": "wrangler deploy --env production",
+    "build:frontend": "cd frontend && npm run build && cd .. && xcopy /E /I /Y frontend\\dist public",
+    "build:frontend:unix": "cd frontend && npm run build && cd .. && cp -r frontend/dist/* public/",
+    "tail": "wrangler tail",
+    "types": "wrangler types"
+  },
+  "dependencies": {
+    "hono": "^4.3.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240614.0",
+    "typescript": "^5.4.5",
+    "wrangler": "^3.60.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "ai",
+    "durable-objects",
+    "workflows",
+    "financial-literacy"
+  ],
+  "author": "Cloudflare Developer",
+  "license": "MIT"
+}
