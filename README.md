@@ -363,19 +363,3 @@ npm run tail
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
-
-## 🙏 Acknowledgments
-
-- Built with [Cloudflare Workers](https://workers.cloudflare.com/)
-- AI powered by [Cloudflare Workers AI](https://developers.cloudflare.com/workers-ai/)
-- UI framework: [React](https://reactjs.org/) + [Tailwind CSS](https://tailwindcss.com/)
-- Routing: [Hono](https://hono.dev/)
-
----
-
-## 📞 Support
-
-For questions or issues:
-- Check the [Cloudflare Workers documentation](https://developers.cloudflare.com/workers/)
-- Review [Durable Objects documentation](https://developers.cloudflare.com/durable-objects/)
-- Explore [Workers AI documentation](https://developers.cloudflare.com/workers-ai/)
